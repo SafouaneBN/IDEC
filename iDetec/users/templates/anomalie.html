@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+     <div class="card">
+        <div class="card-body">
+            <input type="hidden" id="getImage" value="{{ image.chemin.url }}"/>
+            <div class="img_container">
+                <canvas id="detect">
+                Your Browser Is Old, Use A New One
+            </canvas>
+            <div id="detect_frames_control">
+                <div class="buttons">
+                    <button class="add btn btn-info">start</button>
+                </div>
+            </div>
+        </div>
+            <div class="infos_form">
+                <form action="/users/anomalies/{{ image.id }}/add" method="post">
+                    {% csrf_token %}
+                    <div class="input_group">
+                        <input type="text" name="name" id="name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input_group">
+                        <textarea name="desc" id="desc" required></textarea>
+                        <label for="desc">Description</label>
+                    </div>
+                    <div class="input_group">
+                        <input type="text" name="type" id="type" required>
+                        <label for="type">Type</label>
+                    </div>
+                    <input type="hidden" id="pts_string" name="pts"/>
+                    <button class="submit" id="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js'%}"></script>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+.card .card-body {
+  margin-bottom: 40px;
+}
+
+.card .card-body .img_container {
+    position: relative;
+}
+
+.card .card-body .img_container #detect {
+  width: 100%;
+  outline: 2px solid #666;
+}
+
+.card .card-body .infos_form form .input_group {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card .card-body .infos_form form .input_group label {
+  position: absolute;
+  top: 15px;
+  left: calc(10% + 10px);
+  -webkit-transition: .3s;
+  transition: .3s;
+  pointer-events: none;
+}
+
+.card .card-body .infos_form form .input_group input,
+.card .card-body .infos_form form .input_group textarea {
+  width: 80%;
+  border: 0;
+  border-bottom: 2px solid #f8c471;
+  outline: 0;
+  resize: none;
+  margin: 15px 10%;
+  padding: 10px;
+  padding-top: 0;
+}
+
+.card .card-body .infos_form form .input_group input:focus ~ label,
+.card .card-body .infos_form form .input_group input:valid ~ label,
+.card .card-body .infos_form form .input_group textarea:focus ~ label,
+.card .card-body .infos_form form .input_group textarea:valid ~ label {
+  -webkit-transform: translate(8px, -15px) scale(0.85);
+          transform: translate(8px, -15px) scale(0.85);
+  opacity: .8;
+}
+
+.card .card-body .infos_form form .submit {
+  border: 2px solid #f8c471;
+  outline: 0;
+  background-color: #f8c471;
+  color: #fff;
+  margin-left: 10%;
+  margin-top: 15px;
+  padding: 10px 0;
+  width: 25%;
+  border-radius: 5px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.card .card-body .infos_form form .submit:hover {
+  background: transparent;
+  color: #f8c471;
+}
+/*# sourceMappingURL=style.css.map */

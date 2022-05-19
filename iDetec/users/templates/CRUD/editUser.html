@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card">
+        <div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">Form Grid</h4>
+
+        </div>
+
+        <div class="card-body">
+            <div class="live-preview">
+                <form action="/users/edit/{{user.id}}" method="post">
+                     {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Prenom" class="form-label">Prenom</label>
+                                <input type="text" name="prenom" value="{{user.prenom}}" class="form-control" placeholder="Prenom" id="Prenom">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Nom" class="form-label">Nom</label>
+                                <input type="text" name="nom" value="{{user.nom}}" class="form-control" placeholder="Nom" id="Nom">
+                            </div>
+                        </div>
+                        <input type="hidden" name="username" value="{{user.username}}" />
+                        <input type="hidden" name="email" value="{{user.email}}" />
+                        <input type="hidden" name="password" value="{{user.password}}" />
+
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="ForminputState" class="form-label">Role</label>
+                                <select id="ForminputState" name="role" class="form-select " >
+                                    <option value="">choose role</option>
+                                    <option value="admin" >SUPERUSER</option>
+                                    <option value="user" >USER</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="text-end">
+                                <button type="submit" name="btn" class="btn btn-primary">Modifier</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

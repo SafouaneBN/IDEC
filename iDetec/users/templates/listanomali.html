@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load static %}
+
+<div class="card" style=" background:rgba(254, 249, 255, 0.3)">
+    <div class="card-body">
+            <div class="live-preview">
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Discription</th>
+            <th>Type</th>
+            <th>Image</th>
+
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+        {% for ano in anomaly %}
+            <tr>
+                <td>{{ ano.id }}</td>
+                <td>{{ ano.nom }}</td>
+                <td>{{ ano.desc }}</td>
+                <td>{{ ano.type }}</td>
+                <td><img src="{{ ano.image.chemin.url }}" width="70px" height="70px"/></td>
+
+                <td class="text-center">
+
+                     <a class='btn btn-info btn-xs' href="/users/showAno/{{ ano.id }}">
+                        <span class="glyphicon glyphicon-edit"></span> show Anomaly</a>
+
+                </td>
+            </tr>
+        {% endfor%}
+    </table>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}

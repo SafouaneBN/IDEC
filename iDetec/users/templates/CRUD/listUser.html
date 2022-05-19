@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card" style=" background:rgba(254, 249, 255, 0.3)">
+    <div class="card-body">
+            <div class="live-preview">
+    <table class="table table-striped">
+    <thead>
+    <a href="/users/add" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new User</a>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+        {% for u in users %}
+            <tr>
+                <td>{{ u.id }}</td>
+                <td>{{ u.nom }}</td>
+                <td>{{ u.prenom }}</td>
+                <td>{{ u.username }}</td>
+                <td>{{ u.email }}</td>
+                <td>{{ u.role }}</td>
+                <td class="text-center">
+
+                     <a class='btn btn-info btn-xs' href="/users/edit/{{u.id}}">
+                        <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                    <a href="/users/delete/{{u.id}}" class="btn btn-danger btn-xs">
+                        <span class="glyphicon glyphicon-remove"></span> Del</a>
+                </td>
+            </tr>
+        {% endfor%}
+    </table>
+    </div>
+    </div>
+    </div>
+{% endblock %}

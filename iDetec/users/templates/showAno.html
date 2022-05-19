@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+     <div class="card">
+        <div class="card-body">
+            <div>
+                <h2 >Nom:  {{anomaly.nom}}</h2>
+
+                <h2 >Description:  {{anomaly.desc}}</h2>
+                <h2 >Type:  {{anomaly.type}} </h2>
+            </div>
+            <input type="hidden" id="getImage" value="{{ anomaly.image.chemin.url }}"/>
+            <div class="img_container">
+                <canvas id="detect">
+                Your Browser Is Old, Use A New One
+            </canvas>
+        {% for p in pixels %}
+            <input type="hidden" class="x" value="{{p.x}}">
+            <input type="hidden" class="y" value="{{p.y}}">
+        {% endfor %}
+
+
+        </div>
+
+        </div>
+    </div>
+
+    <script src="{% static 'js/show.js'%}"></script>
+
+{% endblock %}

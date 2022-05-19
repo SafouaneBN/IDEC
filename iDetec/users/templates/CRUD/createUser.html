@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!--form action="/users/add/" method="post">
+        {% csrf_token %}
+        <input type="text" name="nom" placeholder="First Name"/>
+        <input type="text" name="prenom" placeholder="Last Name"/>
+        <input type="text" name="username" placeholder="Username"/>
+        <input type="text" name="email" placeholder="Email"/>
+        <input type="password" name="password" placeholder="password"/>
+        <input type="password" name="cpassword" placeholder="Confirm password"/>
+        <select name="role">
+            <option value="">choose role</option>
+            <option value="admin">SUPERUSER</option>
+            <option value="user">USER</option>
+        </select>
+
+        <button type="submit" name="btn">ADD</button>
+    </form-->
+   
+
+     <div class="card">
+        <div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">Form Grid</h4>
+
+        </div>
+
+        <div class="card-body">
+            <div class="live-preview">
+                <form action="/users/add/" method="post">
+                     {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Prenom" class="form-label">Prenom</label>
+                                <input type="text" name="prenom" class="form-control" placeholder="Prenom" id="Prenom">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Nom" class="form-label">Nom</label>
+                                <input type="text" name="nom" class="form-control" placeholder="Nom" id="Nom">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Email" class="form-label">Email</label>
+                                <input type="text" name="email" class="form-control" placeholder="Email" id="Email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Username" class="form-label">Username</label>
+                                <input type="text" name="username" class="form-control" placeholder="Username" id="Username">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Mot_de_passe" class="form-label">Mot de passe</label>
+                                <input type="password" name="password" class="form-control" placeholder="Mot de passe" id="Mot_de_passe">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="CMot_de_passe" class="form-label">Confiramtion mot de passe</label>
+                                <input type="password" name="cpassword" class="form-control" placeholder="Mot de passe" id="CMot_de_passe">
+
+                            </div>
+                        </div>
+
+<div class="col-md-12">
+                            {% if messages %}
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+
+							{% for message in messages %}
+								{{ message }}
+							{% endfor %}
+				</div>
+				{% endif %}
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="ForminputState" class="form-label">Role</label>
+                                <select id="ForminputState" name="role" class="form-select " >
+                                    <option value="">choose role</option>
+                                    <option value="admin" >SUPERUSER</option>
+                                    <option value="user" >USER</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="text-end">
+                                <button id="btn" type="submit" name="btn" class="btn btn-primary">Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

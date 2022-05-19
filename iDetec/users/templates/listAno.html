@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load static %}
+
+<div class="card" style=" background:rgba(254, 249, 255, 0.3)">
+    <div class="card-body">
+            <div class="live-preview">
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Image</th>
+
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+        {% for img in images %}
+            <tr>
+                <td>{{ img.id }}</td>
+                <td><img src="{{ img.chemin.url }}" width="70px" height="70px"/></td>
+
+                <td class="text-center">
+
+                     <a class='btn btn-info btn-xs' href="/users/anomalies/{{img.id}}/add">
+                        <span class="glyphicon glyphicon-edit"></span> Add Anomaly</a>
+
+                </td>
+            </tr>
+        {% endfor%}
+    </table>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}
